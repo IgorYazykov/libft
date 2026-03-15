@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/28 17:03:16 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/03/11 17:01:26 by iyazykov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isprint(char c)
+{
+	if (c < 32 || c == 127)
+	{
+		return (0);
+	}
+	return (1);
+}
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int main (void) 
+// {
+// 	char	dest[] = "\n\f\aHello world 777";
+// 	int i = 0;
+// 	while(dest[i])
+// 	{
+// 		printf("this is print - %i\n", ft_isprint(dest[i]));
+// 		printf("this is print -generale - %i\n", isprint(dest[i]));
+// 		i++;
+// 	}
+// 	return (0);
+// }
