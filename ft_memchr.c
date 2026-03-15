@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:11:22 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:03:33 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 17:56:53 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void *ft_memchr(const void *s, int c, size_t n)
             return((unsigned char *)&new_s[i]);
         i++;
     }
+    if (new_s[i] == c)
+        return((unsigned char *)&new_s[i]);
     return(NULL); 
 }
 
