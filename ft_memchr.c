@@ -6,12 +6,11 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:11:22 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 16:46:16 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:03:33 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {

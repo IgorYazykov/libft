@@ -6,11 +6,11 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:51:47 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 11:40:01 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:02:21 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

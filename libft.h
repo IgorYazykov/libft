@@ -6,14 +6,18 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:07:37 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 17:59:37 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:05:31 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 #include <stdio.h>
+#include <string.h>
+#include <strings.h>
+#include <stdlib.h>
 #include <bsd/string.h>
+#include <ctype.h>
 
 int	ft_isalpha(char c);
 int	ft_isdigit(char c);
@@ -34,5 +38,9 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char *ft_strnstr(const char *big, const char *little, size_t len);
 int ft_atoi(const char *nptr);
+void *ft_calloc(size_t nmemb, size_t size);
+char *ft_strdup(const char *s);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strtrim(char const *s1, char const *set); // problem with malloc
 
 #endif

@@ -6,12 +6,10 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:42:58 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 16:00:34 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:04:56 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)

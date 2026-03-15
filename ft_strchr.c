@@ -6,12 +6,11 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:05:16 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 12:46:58 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:04:42 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char *ft_strchr(const char *s, int c)
 {

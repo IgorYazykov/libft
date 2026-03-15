@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 15:40:24 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:06:13 by iyazykov         ###   ########.fr       */
+/*   Created: 2026/03/15 11:57:24 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/03/15 15:56:30 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(char c)
+char *ft_strdup(const char *s)
 {
-    if(
-        ft_isalpha(c) || ft_isdigit(c)
-    )
-        return (1);
-    return (0);
+    char * new_s;
+    size_t  size;
+
+    size = ft_strlen(s) + 1;
+    new_s = malloc(size);
+    if(new_s == NULL)
+        return(0);
+    ft_memcpy(new_s, s, size);
+    return (new_s);
 }
 
 // int main(void)
 // {
-//     char str[] = "strEW#$091";
-//     int i = 0;
-//     while(str[i])
-//     {
-//         printf("this c is alnum - %i\n", ft_isalnum(str[i]));
-// 		printf("this c is alnum - generale - %i\n", isalnum(str[i]));
-//  		i++;
-//     }
+//     char src[] = "Example";
+//     char src1[] = "Example";
+
+//     char* res = ft_strdup(src);
+//     char* res1 = strdup(src1);
+
+//     printf("%s - my \n", res);
+//     printf("%s - original \n", res1);
 //     return (0);
 // }

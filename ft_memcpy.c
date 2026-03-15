@@ -6,11 +6,11 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 19:38:38 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 11:40:14 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:04:11 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -28,8 +28,6 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     }
     return (dest);
 }
-
-// #include <string.h>
 
 // int main(void)
 // {

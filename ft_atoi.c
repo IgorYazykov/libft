@@ -6,11 +6,10 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:16:40 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/14 17:59:33 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/15 12:02:03 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int is_space(char c)

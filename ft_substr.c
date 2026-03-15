@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 15:27:39 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:02:49 by iyazykov         ###   ########.fr       */
+/*   Created: 2026/03/15 12:41:37 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/03/15 13:17:34 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (
-		!((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z'))
-	)
-	{
+    char *  sub;
+    size_t i;
+
+    i = 0;
+    sub = malloc(len + 1);
+    if (sub == NULL)
 		return (0);
-	}
-	return (1);
+    memcpy(sub, s + start, len);
+    sub[len + 1] = '\0';
+    return(sub);
 }
 
-// int main (void) 
+// int main(void)
 // {
-// 	char	dest[] = "##!HelloWorld";
-// 	int i = 0;
-// 	while (dest[i])
-// 	{
-// 		printf("this is the alpha: %i\n", ft_isalpha(dest[i]));
-// 		printf("this is the alpha - generale: %i\n", isalpha(dest[i]));
-// 		i++;
-// 	}
-// 	return (0);
+//     char str[] = "example string, very long string";
+//     char* sub_str;
+//     sub_str = ft_substr(str, 7, 7);
+//     printf("res - %s", sub_str);
+//     return(0);
 // }
