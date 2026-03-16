@@ -6,58 +6,46 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 13:37:41 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 16:14:07 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/16 12:57:47 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t finde_from_set(char const *s1, char const *set, size_t start, int direction)
+int comparasion(char const s1, char const *set)
 {
-    size_t  len_set;
-    size_t  j;
+    size_t  i;
 
-    len_set = ft_strlen(set);
-    j = 0;
-    while (s1[start])
+    i = 0;
+    while (set[i])
     {
-        while (set[j])
-        {
-            if(s1[start] != set[j])
-                len_set--;
-            if(len_set == 0)
-                return(start);
-            j++;
-        }
-        
-        len_set = ft_strlen(set);
-        j = 0;
-        if(direction == 1)
-            start++;
-        else
-            start--;
+        if(set[i] == s1) 
+            return(1);
+        i++;
     }
-    return(start);
+    return(0);
 }
 
 char *ft_strtrim(char const *s1, char const *set)
 {
     char*   new_str;
-    size_t  len;
-    size_t  i_from_start;
-    size_t  i_end;
+    size_t  end;
+    size_t  start;
 
-    len = ft_strlen(s1);
-    i_from_start = 0;
-    i_end = 0;
-    i_from_start += finde_from_set(s1, set, 0, 1);
-    i_end += finde_from_set(s1, set, len - 1, 0);
-    printf("size %zu, i_from_start = %zu, i_end = %zu\n", i_end - i_from_start + 1, i_from_start, i_end);
-    new_str = malloc(i_end - i_from_start + 1);
-    if (new_str == NULL)
-        return (0);
-    memcpy(new_str, s1 + i_from_start, i_from_start - i_end);
-    new_str[i_end - i_from_start + 1] = '\0';
+    end = ft_strlen(s1);
+    start= 0;
+    while(s1[start] && comparasion(s1[start], set))
+        start++;
+    if(start < end)
+    {
+        while(s1[end - 1] && comparasion(s1[end - 1], set))
+            end--;
+    }
+    new_str = malloc(end - start + 1);
+    if(new_str == NULL)
+        return(0);
+    ft_memcpy(new_str, s1 + start, end - start);
+    new_str[end - start] = '\0';
     return(new_str);
 }
 

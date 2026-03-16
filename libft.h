@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:07:37 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 16:05:31 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/16 12:45:27 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int ft_atoi(const char *nptr);
 void *ft_calloc(size_t nmemb, size_t size);
 char *ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start, size_t len);
-char *ft_strtrim(char const *s1, char const *set); // problem with malloc
+char *ft_strtrim(char const *s1, char const *set);
 
 #endif

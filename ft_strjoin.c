@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 13:08:20 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 13:37:17 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/16 12:40:30 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char *ft_strjoin(char const *s1, char const *s2)
     new_str = malloc(len_s1 + len_s2 + 1);
     if(new_str == NULL)
         return (0);
-    memcpy(new_str, s1, len_s1);
-    memcpy(new_str + len_s1, s2, len_s2);
-    new_str[len_s1 + len_s2 + 1] = '\0';
+    ft_memcpy(new_str, s1, len_s1);
+    ft_memcpy(new_str + len_s1, s2, len_s2);
+    new_str[len_s1 + len_s2] = '\0';
     return(new_str);
 }
 
