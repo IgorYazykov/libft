@@ -16,7 +16,7 @@
 #include <string.h>
 #include <strings.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 #include <ctype.h>
 
 int	ft_isalpha(char c);
@@ -42,5 +42,6 @@ void *ft_calloc(size_t nmemb, size_t size);
 char *ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c); // have problem 
 
 #endif
