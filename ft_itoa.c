@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned int find_dec(unsigned int n)
+static unsigned int find_dec(unsigned int n)
 {
     unsigned int i;
 
@@ -25,7 +25,7 @@ unsigned int find_dec(unsigned int n)
     return(i);
 }
 
-char *get_char_from_nb(unsigned int n, unsigned int len, unsigned int sign, char* str)
+static char *get_char_from_nb(unsigned int n, unsigned int len, unsigned int sign, char* str)
 {
     unsigned int temp_n;
     unsigned int dec_nub;

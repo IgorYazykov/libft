@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int comparasion(char const s1, char const *set)
+static int comparasion(char const s1, char const *set)
 {
     size_t  i;
 

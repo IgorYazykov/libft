@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void free_all(char **arr, size_t i)
+static void free_all(char **arr, size_t i)
 {
     while (arr[i])
     {
@@ -22,7 +22,7 @@ void free_all(char **arr, size_t i)
     free(arr);   
 }
 
-int counter_words(char const *s, char c)
+static int counter_words(char const *s, char c)
 {
     int counter;
     int i;
@@ -40,7 +40,7 @@ int counter_words(char const *s, char c)
     return(counter);
 }
 
-char *get_new_word(char const *s, char c, size_t *start_count)
+static char *get_new_word(char const *s, char c, size_t *start_count)
 {
     char*   new_str;
     size_t  start;

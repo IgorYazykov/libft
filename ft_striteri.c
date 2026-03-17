@@ -21,10 +21,8 @@ static char mapi_test(unsigned int index, char c)
 
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    size_t   len;
     unsigned int i;
 
-    len = ft_strlen(s);
     i = 0;
     while(s[i])
     {
@@ -33,9 +31,9 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
     }
 }
 
-int main(void)
-{
-    char str[] = "jjdgjg";
-    printf("%s\n", ft_strmapi(str, mapi_test));
-    return(0);
-}
+// int main(void)
+// {
+//     char str[] = "jjdgjg";
+//     printf("%s\n", ft_strmapi(str, mapi_test));
+//     return(0);
+// }
