@@ -1,47 +1,95 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/17 14:31:19 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/03/17 16:21:29 by iyazykov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// unsigned int find_dec(unsigned int n)
-// {
-//     unsigned int i;
+unsigned int find_dec(unsigned int n)
+{
+    unsigned int i;
 
-//     i = 1;
-//     while(n >= 9)
-//     {
-//         n /= 10;
-//         i++;
-//     }
-//     return(i);
-// }
+    i = 1;
+    while(n >= 9)
+    {
+        n /= 10;
+        i++;
+    }
+    return(i);
+}
 
-// char *ft_itoa(int n)
-// {
-//     unsigned int new_n;
-//     int sign;
-//     char* new_string;
-//     unsigned int len;
+char *get_char_from_nb(unsigned int n, unsigned int len, unsigned int sign, char* str)
+{
+    unsigned int temp_n;
+    unsigned int dec_nub;
 
-//     if (n == 0)
-//         return(ft_strdup("0"));
-//     sign = 1;
-//     len = 0;
-//     if(n < 0)
-//     {
-//         sign = 0;
-//         len++;
-//         new_n = (unsigned int)-n;
-//     } else
-//         new_n = n;
-//     len += find_dec(new_n);
-//     new_string = malloc(len + 1);
-//     if (new_string == NULL)
-//         return(0);
-//     printf("%u , %u ", new_n, len);
-//     return("sdgdf");
-// }
+    dec_nub = 1;
+    str[0]= '-';
+    while (sign < len)
+    {
+        temp_n = n;
+        if(temp_n < 10)
+            str[sign] = temp_n + '0';
+        else
+        {
+            while(temp_n >= 10)
+            {
+                temp_n /= 10;
+                dec_nub *= 10;
+            }
+            str[sign] = temp_n + '0';
+            n -= temp_n * dec_nub;
+            dec_nub = 1;
+        }
+        sign++;
+    }
+    return(str);
+}
+
+char *ft_itoa(int n)
+{
+    unsigned int new_n;
+    unsigned int sign;
+    char* new_string;
+    unsigned int len;
+
+    if (n == 0)
+        return(ft_strdup("0"));
+    sign = 0;
+    len = 0;
+    if(n > 0)
+        new_n = n;
+    else
+    {
+        sign = 1;
+        len++;
+        new_n = (unsigned int)-n;
+    }
+    len += find_dec(new_n);
+    new_string = malloc(len + 1);
+    if (new_string == NULL)
+        return(NULL);
+    new_string = get_char_from_nb(new_n, len, sign, new_string);
+    new_string[len] = '\0';
+    return(new_string);
+}
 
 // int main(void)
 // {
-//     printf("%s", ft_itoa(-2147483648));
+//     printf("%s\n", ft_itoa(-2147483648));
+//     printf("%s\n", ft_itoa(2147483647));
+//     printf("%s\n", ft_itoa(0));
+//     printf("%s\n", ft_itoa(100));
+//     printf("%s\n", ft_itoa(-100));
+//     printf("%s\n", ft_itoa(10));
+//     printf("%s\n", ft_itoa(12));
+//     printf("%s\n", ft_itoa(125));
 //     return(0);
 // }
