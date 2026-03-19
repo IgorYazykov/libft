@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/18 12:37:38 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/18 12:37:39 by iyazykov         ###   ########.fr       */
+/*   Created: 2026/03/19 17:16:43 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/03/19 17:30:50 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    if(s != NULL)
+    t_list *temp;
+
+    temp = lst;
+    while (temp)
     {
-        write(fd, &s[0], ft_strlen(s));
-        ft_putchar_fd('\n', fd);
+        f(temp->content);
+        temp = temp->next;
     }
 }
-
-// int main(void)
-// {
-//     char str[] = "Hello";
-//     ft_putendl_fd(str, 1);
-//     char str_error[] = "error";
-//     ft_putendl_fd(str_error, 2);
-//     return (0);
-// }
