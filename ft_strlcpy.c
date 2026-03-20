@@ -6,26 +6,26 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:42:58 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:04:56 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:07:24 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    if (size == 0)
-        return (ft_strlen(src));
-    while(src[i] && i < size - 1)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (ft_strlen(src));
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
 //This program shud be run with flag -lbsd after name of file in compiling

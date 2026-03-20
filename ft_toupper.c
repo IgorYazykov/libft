@@ -6,19 +6,19 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 11:43:36 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 14:56:06 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:18:52 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if(c >= 97 && c <= 122)
-    {
-        c -= 32;
-    }
-    return c;
+	if (c >= 97 && c <= 122)
+	{
+		c -= 32;
+	}
+	return (c);
 }
 
 // int main(void)

@@ -6,13 +6,13 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:03:16 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:03:27 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:38:02 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c < 32 || c == 127)
 	{

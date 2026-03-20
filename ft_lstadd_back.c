@@ -6,22 +6,22 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:53:54 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/18 16:31:06 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:31:48 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *temp;
-    t_list *last;
+	t_list	*temp;
+	t_list	*last;
 
-    if (!lst || !new)
-        return ;
-    temp = *lst;
-    last = ft_lstlast(temp);
-    last->next = new;
+	if (!lst || !new)
+		return ;
+	temp = *lst;
+	last = ft_lstlast(temp);
+	last->next = new;
 }
 
 // int main(void)
@@ -47,6 +47,5 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 //         printf("%s\n", temp->content);
 //         temp = temp->next;
 //     }
-   
 //     return(0);
 // }

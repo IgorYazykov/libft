@@ -6,27 +6,27 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:51:47 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:02:21 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:27:58 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *c;
-    size_t i;
+	unsigned char	*c;
+	size_t			i;
 
-    i = 0;
-    c = (unsigned char *)s;
-    while(i < n)
-    {
-        c[i] = '\0';
-        i++;
-    }
+	i = 0;
+	c = (unsigned char *)s;
+	while (i < n)
+	{
+		c[i] = '\0';
+		i++;
+	}
 }
 
-// #include <strings.h>
+// #include <bsd/string.h>
 
 // int main(void)
 // {

@@ -6,19 +6,19 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:40:24 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:06:13 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:37:05 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
-    if(
-        ft_isalpha(c) || ft_isdigit(c)
-    )
-        return (1);
-    return (0);
+	if (
+		ft_isalpha(c) || ft_isdigit(c)
+	)
+		return (1);
+	return (0);
 }
 
 // int main(void)

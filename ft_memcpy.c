@@ -6,27 +6,27 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 19:38:38 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:04:11 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:13:09 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *str1;
-    const unsigned char *str2;
-    size_t i;
+	unsigned char		*str1;
+	const unsigned char	*str2;
+	size_t				i;
 
-    i = 0;
-    str1 = (unsigned char *) dest;
-    str2 = (const unsigned char *) src;
-    while(i < n)
-    {
-        str1[i] = (unsigned char)str2[i];
-        i++;
-    }
-    return (dest);
+	i = 0;
+	str1 = (unsigned char *) dest;
+	str2 = (const unsigned char *) src;
+	while (i < n)
+	{
+		str1[i] = (unsigned char)str2[i];
+		i++;
+	}
+	return (dest);
 }
 
 // int main(void)
@@ -38,15 +38,12 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 //     printf("Befor %s\n", str1);
 //     ft_memcpy(str1, str2, 5);
 //     printf("After %s\n", str1);
-    
 //     char str3[] = "str1";
 //     char str4[] = "str2";
 //     printf("Befor - original %s\n", str3);
 //     memcpy(str3, str4, 5);
 //     printf("After - original %s\n", str3);
-
 //     printf("Example with numbers\n");
-
 //     int str5[] = {1, 2, 3};
 //     int str6[] = {4, 5, 6};
 //     int i = 0;
@@ -62,7 +59,6 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 //         printf("After %i\n", str5[i]);
 //         i++;
 //     }
-    
 //     int str7[] = {1, 2, 3};
 //     int str8[] = {4, 5, 6};
 //     i = 0;

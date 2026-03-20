@@ -6,37 +6,37 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:22:39 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:04:21 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:48:56 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-    unsigned char *d;
-    const unsigned char *s;
-    size_t i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
-    d = (unsigned char *)dest;
-    s = (const unsigned char *)src;
-    i = 0;
-    if (d == s || n == 0)
-        return dest;
-    if (d < s)
-    {
-        while (i < n)
-        {
-            d[i] = s[i];
-            i++;
-        }
-    } else {
-        while (n--)
-        {
-            d[n] = s[n];
-        }
-    }
-    return dest;
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	i = 0;
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (n--)
+			d[n] = s[n];
+	}
+	return (dest);
 }
 
 // int main(void)

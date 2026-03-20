@@ -6,42 +6,43 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:16:40 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:02:03 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:20:23 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int is_space(char c)
+static int	is_space(char c)
 {
-    if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
-        return 1;
-    return 0;
+	if (c == ' ' || c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t' || c == '\v')
+		return (1);
+	return (0);
 }
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-    int i;
-    int numb;
-    int sign;
+	int	i;
+	int	numb;
+	int	sign;
 
-    i = 0;
-    numb = 0;
-    sign = 1;
-    while (is_space(nptr[i]))
-        i++;
-    if ((nptr[i] == '+' || nptr[i] == '-'))
-    {
-        if (nptr[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (ft_isdigit(nptr[i]))
-    {
-        numb = numb * 10 + (nptr[i] - '0');
-        i++;
-    }
-    return (numb * sign);
+	i = 0;
+	numb = 0;
+	sign = 1;
+	while (is_space(nptr[i]))
+		i++;
+	if ((nptr[i] == '+' || nptr[i] == '-'))
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		numb = numb * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (numb * sign);
 }
 
 // int main()

@@ -6,26 +6,26 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:11:22 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 17:56:53 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:37:22 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    const unsigned char * new_s;
-    size_t i;
+	const unsigned char	*new_s;
+	size_t				i;
 
-    i = 0;
-    new_s = (const unsigned char *) s;
-    while(i < n)
-    {
-        if (new_s[i] == (unsigned char)c)
-            return((unsigned char *)&new_s[i]);
-        i++;
-    }
-    return(NULL); 
+	i = 0;
+	new_s = (const unsigned char *) s;
+	while (i < n)
+	{
+		if (new_s[i] == (unsigned char)c)
+			return ((unsigned char *)&new_s[i]);
+		i++;
+	}
+	return (NULL);
 }
 
 // int main() 

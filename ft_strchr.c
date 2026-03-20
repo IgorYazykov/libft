@@ -6,26 +6,26 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:05:16 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:04:42 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:03:57 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-    {
-        if(s[i] == c)
-            return ((char *)&s[i]);
-        i++;
-    }
-    if(s[i] == c)
-        return ((char *)&s[i]);
-    return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
 // int main(void)

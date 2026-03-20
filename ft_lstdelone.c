@@ -6,22 +6,22 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:56:24 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/18 16:32:34 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:32:21 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void free_node(void* lst)
-{
-    free(lst);
-}
+// static void	free_node(void *lst)
+// {
+// 	free(lst);
+// }
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    if(!lst || !del)
-        return ;
-    del(lst);
+	if (!lst || !del)
+		return ;
+	del(lst);
 }
 
 // int main(void)

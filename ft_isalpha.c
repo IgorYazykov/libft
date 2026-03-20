@@ -6,13 +6,13 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:27:39 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:02:49 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:36:45 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if (
 		!((c >= 'A' && c <= 'Z')

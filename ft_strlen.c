@@ -6,20 +6,20 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:03:59 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:25:41 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:08:06 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char* str)
+size_t	ft_strlen(const char *str)
 {
-    size_t size;
+	size_t	size;
 
-    size = 0;
-    while (str[size])
-        size++;
-    return size;
+	size = 0;
+	while (str[size])
+		size++;
+	return (size);
 }
 
 // int	main(void)

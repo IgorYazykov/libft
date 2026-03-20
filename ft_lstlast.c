@@ -6,22 +6,22 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:42:47 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/18 15:12:54 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:34:40 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    t_list  *temp;
+	t_list	*temp;
 
-    if (!lst)
-        return NULL;
-    temp = lst;
-    while(temp->next)
-        temp = temp->next;
-    return (temp);
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }
 
 // int main(void)

@@ -6,13 +6,13 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:27:31 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:03:40 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:37:56 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c < '0' || c > '9' )
 	{

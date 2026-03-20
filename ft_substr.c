@@ -6,21 +6,21 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 12:41:37 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/16 11:59:40 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 18:18:00 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *  sub;
-	size_t s_len;
+	char	*sub;
+	size_t	s_len;
 
-	if(!s)
-		return(NULL);	
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
-	if(start > s_len)
+	if (start > s_len)
 		return (ft_strdup(""));
 	if (len > s_len - start)
 		len = s_len - start;

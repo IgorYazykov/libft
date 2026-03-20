@@ -6,26 +6,25 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:18:03 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/15 12:04:36 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:50:07 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned char *data;
-    size_t i;
+	unsigned char	*data;
+	size_t			i;
 
-    i = 0;
-    data = (unsigned char *)s;
-    while(i < n)
-    {
-        data[i] = (unsigned char)c;
-        i++;
-    }
-
-    return (s);
+	i = 0;
+	data = (unsigned char *)s;
+	while (i < n)
+	{
+		data[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
 
 // int main(void)
@@ -38,7 +37,6 @@ void *ft_memset(void *s, int c, size_t n)
 //     printf("%s\n", str1);
 //     memset(str2, '#', 2);
 //     printf("%s\n", str2);
-    
 //     printf("Example with numbers\n");
 
 //     int str5[] = {1, 2, 3};
@@ -49,7 +47,6 @@ void *ft_memset(void *s, int c, size_t n)
 //         printf("After %i\n", str5[i]);
 //         i++;
 //     }
-    
 //     int str7[] = {1, 2, 3};
 //     memset(str7, 1, 12);
 //     i = 0;

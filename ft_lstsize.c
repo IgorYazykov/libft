@@ -6,27 +6,27 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:35:30 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/18 14:43:28 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:36:01 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    t_list  *temp;
-    int i;
+	t_list	*temp;
+	int		i;
 
-    temp = lst;
-    i = 0;
-    if (!lst)
-        return (0);
-    while (temp)
-    {
-        temp = temp->next;
-        i++;
-    }
-    return(i);
+	temp = lst;
+	i = 0;
+	if (!lst)
+		return (0);
+	while (temp)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
 }
 
 // int main(void)
