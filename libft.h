@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:07:37 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 19:45:05 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/21 16:07:36 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <strings.h>
+# include <bsd/string.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <ctype.h>

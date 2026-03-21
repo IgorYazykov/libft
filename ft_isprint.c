@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:03:16 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 19:38:02 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/21 13:02:49 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_isprint(int c)
 {
-	if (c < 32 || c == 127)
+	if (c >= 32 && c < 127)
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 // int main (void) 

@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:05:16 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 18:03:57 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/21 16:00:07 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (char)c)
 		return ((char *)&s[i]);
 	return (NULL);
 }

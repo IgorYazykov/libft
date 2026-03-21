@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 12:41:37 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 18:18:00 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/21 16:55:03 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	ft_memcpy(sub, s + start, len);
 	sub[len] = '\0';
-	printf("len %zu\n", len);
 	return (sub);
 }
 
@@ -37,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 //     char str[] = "example string, very long string";
 //     char* sub_str;
-//     sub_str = ft_substr(str, 2, 5);
+//     sub_str = ft_substr(str, 0, 10);
 //     printf("res - %s", sub_str);
 //     return(0);
 // }

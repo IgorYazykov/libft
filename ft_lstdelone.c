@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:56:24 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 19:32:21 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/21 16:30:04 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
-	del(lst);
+	del(lst->content);
+	free(lst);
 }
 
 // int main(void)
