@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 16:05:52 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 18:03:08 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/22 17:13:26 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,114 +22,102 @@ static void	free_all(char **arr, size_t i)
 	free(arr);
 }
 
-static int	counter_words(char const *s, char c)
+size_t counter_words(const char *str, char c)
 {
-	int	counter;
-	int	i;
+	size_t	counter;
 
 	counter = 0;
-	i = 0;
-	if (s[i] != c && s[i] != '\0')
-		counter++;
-	while (s[i])
+	while(*str)
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+		if (*str != c && (*(str + 1) == c || *(str + 1) == '\0'))
+		{
 			counter++;
-		i++;
+		}
+		str++;
 	}
 	return (counter);
 }
 
-static char	*get_new_word(char const *s, char c, size_t *s_c)
-{
-	char	*new_str;
-	size_t	start;
-	size_t	end;
-
-	start = 0;
-	end = 0;
-	while (s[*s_c])
-	{
-		if (s[*s_c] == c && s[*s_c + 1] != c && s[*s_c + 1] != '\0')
-			start = *s_c + 1;
-		if (s[*s_c] != c && (s[*s_c + 1] == c || s[*s_c + 1] == '\0'))
-		{
-			end = *s_c;
-			(*s_c)++;
-			break ;
-		}
-		(*s_c)++;
-	}
-	new_str = malloc(end + 2 - start);
-	if (new_str == NULL)
-		return (NULL);
-	ft_memcpy(new_str, s + start, end - start + 1);
-	new_str[end - start + 1] = '\0';
-	return (new_str);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char	**arr_with_strings;
-	size_t	number_words;
+	char **arr_strs;
+	size_t	len;
+	size_t	len_word;
 	size_t	i;
-	size_t	last_pos;
 
-	if (!s)
+	if(!s)
 		return (NULL);
-	number_words = counter_words(s, c);
-	arr_with_strings = malloc((number_words + 1) * sizeof(char *));
-	if (arr_with_strings == NULL)
+	len = counter_words(s, c);
+	arr_strs = malloc((len + 1) * sizeof(char *));
+	if (!arr_strs)
 		return (NULL);
+	len_word = 0;
 	i = 0;
-	last_pos = 0;
-	while (i < number_words)
+	while (*s)
 	{
-		arr_with_strings[i] = get_new_word(s, c, &last_pos);
-		if (arr_with_strings[i] == NULL)
+		if (*s != c && *s != '\0')
+			len_word++;
+		if ((*s == c || *s == '\0') && len_word != 0)
 		{
-			free_all(arr_with_strings, i);
-			return (NULL);
+			arr_strs[i] = malloc(len_word);
+			if (!arr_strs[i])
+			{
+				free_all(arr_strs, i);
+				return (NULL);
+			}
+			
+			i++;
+			len_word = 0;
 		}
-		i++;
+		s++;
 	}
-	arr_with_strings[i] = NULL;
-	return (arr_with_strings);
+	arr_strs[len] = NULL;
+	return (arr_strs);
 }
 
-// int main(void)
-// {
-//     char str[] = "    h fkngenjg    g ";
-//     char **arr_with_str = ft_split(str, ' ');
-//     int i = 0;
-//     while (arr_with_str[i])
-//     {
-//         printf("%s\n", arr_with_str[i]);
-//         free(arr_with_str[i]);
-//         i++;
-//     }
-//     free(arr_with_str);
-//     printf("new test \n");
-//     char *str1 = "   hello world";
-//     char **arr_with_str1 = ft_split(str1, ' ');
-//     i = 0;
-//     while (arr_with_str1[i])
-//     {
-//         printf("%s\n", arr_with_str1[i]);
-//         free(arr_with_str1[i]);
-//         i++;
-//     }
-//     free(arr_with_str1);
-//     printf("new test 2 \n");
-//     char *str2 = "";
-//     char **arr_with_str2 = ft_split(str2, ' ');
-//     i = 0;
-//     while (arr_with_str2[i])
-//     {
-//         printf("%s\n", arr_with_str2[i]);
-//         free(arr_with_str2[i]);
-//         i++;
-//     }
-//     free(arr_with_str2);
-//     return(0);
-// }
+int main(void)
+{
+    // char str[] = "    h fkngenjg    g ";
+    // char **arr_with_str = ft_split(str, ' ');
+    // int i = 0;
+    // while (arr_with_str[i])
+    // {
+    //     printf("%s\n", arr_with_str[i]);
+    //     free(arr_with_str[i]);
+    //     i++;
+    // }
+    // free(arr_with_str);
+    // printf("new test \n");
+    // char *str1 = "   hello world";
+    // char **arr_with_str1 = ft_split(str1, ' ');
+    // i = 0;
+    // while (arr_with_str1[i])
+    // {
+    //     printf("%s\n", arr_with_str1[i]);
+    //     free(arr_with_str1[i]);
+    //     i++;
+    // }
+    // free(arr_with_str1);
+    // printf("new test 2 \n");
+    // char *str2 = "";
+    // char **arr_with_str2 = ft_split(str2, ' ');
+    // i = 0;
+    // while (arr_with_str2[i])
+    // {
+    //     printf("%s\n", arr_with_str2[i]);
+    //     free(arr_with_str2[i]);
+    //     i++;
+    // }
+    // free(arr_with_str2);
+	char str[] = "4^^^1^^2a,^^^^3^^^^--h^^^^";
+	// char **arr_with_str = ft_split(str, '^');
+	printf("%zu",counter_words(str, '^'));
+	// int i = 0;
+	// while (arr_with_str[i])
+    // {
+    //     printf("%s\n", arr_with_str[i]);
+    //     free(arr_with_str[i]);
+    //     i++;
+    // }
+    return(0);
+}

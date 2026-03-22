@@ -6,34 +6,34 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 17:23:59 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/19 17:58:37 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:32:01 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-//     t_list *new_lst;
-//     t_list *temp_for_new;
-//     int flag;
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_lst;
+	t_list	*new_node;
+	void	*new_content;
 
-//     flag = 0;
-//     while (lst)
-//     {
-//         if (flag == 0)
-//         {
-//             new_lst = ft_lstnew(f(lst->content));
-//             if(new_lst == NULL)
-//             {
-//                 del(new_lst);
-//                 return (NULL);
-//             }
-//             lst = lst->next;
-//             flag++;
-//         }
-//         else
-
-//     }
-//     return (new_lst);
-// }
+	if (!lst || !del || !f)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
+	{
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
+		if (!new_node)
+		{
+			del(new_content);
+			ft_lstclear(&new_lst, del);
+			free(new_node);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
+	}
+	return (new_lst);
+}

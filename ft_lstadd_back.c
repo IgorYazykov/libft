@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:53:54 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 17:31:48 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/22 10:27:32 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	temp = *lst;
 	last = ft_lstlast(temp);
 	last->next = new;

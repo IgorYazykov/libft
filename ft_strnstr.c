@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 15:05:48 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/21 16:56:35 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/22 11:08:30 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && big[i + j])
+		while (big[i + j] == little[j] && big[i + j] && i + j < len)
 		{
-			if (big[i + j] == little[j])
-			{
-				printf("%c - big string, %c - small string, %zu\n", big[i + j], little[j], len);
-				j++;
-			}
-				
-			if (little[j] == '\0' && ((i + j) < len))
+			j++;
+			if (little[j] == '\0')
 				return ((char *)&big[i]);
 		}
 		i++;
@@ -58,8 +53,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 	// }
 // 	char haystack[30] = "aaabcabcd";
 // 	printf("%s\n",ft_strnstr(haystack, "aaabc", 5));
-
-// 	// printf("%s\n",ft_strnstr(haystack, "abcd", 9));
+// 	char *s1 = "MZIRIBMZIRIBMZE123";
+//     char *s2 = "MZIRIBMZE";
+// 	size_t max = strlen(s2);
+// 	printf("%s\n",ft_strnstr(s1, s2, max));
+// 	printf("%s - original \n ",strnstr(s1, s2, max));
+// 	char *big = "abcdef";
+//     char *little = "abcdefghijklmnop";
+//     size_t max1 = strlen(big);
+// 	printf("%s\n",ft_strnstr(big, little, max1));
+// 	printf("%s - original \n ",strnstr(big, little, max1));
+// 	char *s11 = "A";
+//     size_t max2 = strlen(s1) + 1;
+// 	printf("%s\n",ft_strnstr(s11, s11, max2));
+// 	printf("%s - original \n ",strnstr(s11, s11, max2));
+// 	printf("%s\n",ft_strnstr(haystack, "abcd", 9));
 
 // 	// printf("%s\n",ft_strnstr(haystack, "a", 1));
 // 	return(0);
