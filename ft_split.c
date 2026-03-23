@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 16:05:52 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/23 17:43:30 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/23 17:51:10 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	free_all(char **arr, size_t i)
 {
 	while (i > 0)
 	{
-		free(arr[i]);
 		i--;
+		free(arr[i]);
 	}
 	free(arr);
 	return (0);
@@ -57,7 +57,6 @@ static int	fill_arr(char **arr, const char *s, char c, int i)
 		}
 		if (len_word > 0)
 		{
-			printf("%zu\n",len_word + 1);
 			arr[i] = malloc(len_word + 1);
 			if (arr[i] == NULL)
 				return (free_all(arr, i));
@@ -90,96 +89,96 @@ char	**ft_split(char const *s, char c)
 	return (arr_strs);
 }
 
-int main(void)
-{
-// 	// char str[] = "    h fkngenjg    g ";
-// 	// char **arr_with_str = ft_split(str, ' ');
+// int main(void)
+// {
+// // 	// char str[] = "    h fkngenjg    g ";
+// // 	// char **arr_with_str = ft_split(str, ' ');
+// // 	// int i = 0;
+// // 	// while (arr_with_str[i])
+// // 	// {
+// // 	//     printf("%s\n", arr_with_str[i]);
+// // 	//     free(arr_with_str[i]);
+// // 	//     i++;
+// // 	// }
+// // 	// free(arr_with_str);
+// // 	// printf("new test \n");
+// // 	// char *str1 = "   hello world";
+// // 	// char **arr_with_str1 = ft_split(str1, ' ');
+// // 	// i = 0;
+// // 	// while (arr_with_str1[i])
+// // 	// {
+// // 	//     printf("%s\n", arr_with_str1[i]);
+// // 	//     free(arr_with_str1[i]);
+// // 	//     i++;
+// // 	// }
+// // 	// free(arr_with_str1);
+// // 	// printf("new test 2 \n");
+// // 	// char *str2 = "";
+// // 	// char **arr_with_str2 = ft_split(str2, ' ');
+// // 	// i = 0;
+// // 	// while (arr_with_str2[i])
+// // 	// {
+// // 	//     printf("%s\n", arr_with_str2[i]);
+// // 	//     free(arr_with_str2[i]);
+// // 	//     i++;
+// // 	// }
+// // 	// free(arr_with_str2);
+// 	char str[] = "4^^^1^^2a,^^^^3^^^^--h^^^^";
+// 	char **arr_with_str = ft_split(str, '^');
+// 	int i1;
+// 	i1 = 0;
+// 	while (arr_with_str[i1])
+// 	{
+// 		printf("%s\n", arr_with_str[i1]);
+// 		free(arr_with_str[i1]);
+// 		i1++;
+// 	}
+
+// // 	char **arr_with_str1 = ft_split("hello!", ' ');
+// // 	int i;
+// // 	i = 0;
+// // 	while (arr_with_str1[i])
+// // 	{
+// // 		printf("%s\n", arr_with_str1[i]);
+// // 		free(arr_with_str1[i]);
+// // 		i++;
+// // 	}
+// // 	// int i = 0;
+// // 	// while (arr_with_str[i])
+// // 	// {
+// // 	//     printf("%s\n", arr_with_str[i]);
+// // 	//     free(arr_with_str[i]);
+// // 	//     i++;
+// // 	// }
+// 	// char **arr_with_str = ft_split("\t\t\t\thello!\t", '\t');
+// 	// char **arr_with_str2 = ft_split("ggggggggggg", 'g');
+// 	// char **arr_with_str3 = ft_split("hello!zzzzzzzz", 'z');
 // 	// int i = 0;
 // 	// while (arr_with_str[i])
 // 	// {
 // 	//     printf("%s\n", arr_with_str[i]);
-// 	//     free(arr_with_str[i]);
 // 	//     i++;
 // 	// }
-// 	// free(arr_with_str);
-// 	// printf("new test \n");
-// 	// char *str1 = "   hello world";
-// 	// char **arr_with_str1 = ft_split(str1, ' ');
-// 	// i = 0;
-// 	// while (arr_with_str1[i])
-// 	// {
-// 	//     printf("%s\n", arr_with_str1[i]);
-// 	//     free(arr_with_str1[i]);
-// 	//     i++;
-// 	// }
-// 	// free(arr_with_str1);
-// 	// printf("new test 2 \n");
-// 	// char *str2 = "";
-// 	// char **arr_with_str2 = ft_split(str2, ' ');
 // 	// i = 0;
 // 	// while (arr_with_str2[i])
 // 	// {
 // 	//     printf("%s\n", arr_with_str2[i]);
-// 	//     free(arr_with_str2[i]);
 // 	//     i++;
 // 	// }
-// 	// free(arr_with_str2);
-	char str[] = "4^^^1^^2a,^^^^3^^^^--h^^^^";
-	char **arr_with_str = ft_split(str, '^');
-	int i1;
-	i1 = 0;
-	while (arr_with_str[i1])
-	{
-		printf("%s\n", arr_with_str[i1]);
-		free(arr_with_str[i1]);
-		i1++;
-	}
+// 	// i = 0;
+// 	// while (arr_with_str3[i])
+// 	// {
+// 	//     printf("%s\n", arr_with_str3[i]);
+// 	//     i++;
+// 	// }
 
-// 	char **arr_with_str1 = ft_split("hello!", ' ');
-// 	int i;
-// 	i = 0;
-// 	while (arr_with_str1[i])
-// 	{
-// 		printf("%s\n", arr_with_str1[i]);
-// 		free(arr_with_str1[i]);
-// 		i++;
-// 	}
+// 	// char **arr_with_str = ft_split("hello!", ' ');
 // 	// int i = 0;
 // 	// while (arr_with_str[i])
 // 	// {
 // 	//     printf("%s\n", arr_with_str[i]);
-// 	//     free(arr_with_str[i]);
 // 	//     i++;
 // 	// }
-	// char **arr_with_str = ft_split("\t\t\t\thello!\t", '\t');
-	// char **arr_with_str2 = ft_split("ggggggggggg", 'g');
-	// char **arr_with_str3 = ft_split("hello!zzzzzzzz", 'z');
-	// int i = 0;
-	// while (arr_with_str[i])
-	// {
-	//     printf("%s\n", arr_with_str[i]);
-	//     i++;
-	// }
-	// i = 0;
-	// while (arr_with_str2[i])
-	// {
-	//     printf("%s\n", arr_with_str2[i]);
-	//     i++;
-	// }
-	// i = 0;
-	// while (arr_with_str3[i])
-	// {
-	//     printf("%s\n", arr_with_str3[i]);
-	//     i++;
-	// }
 
-	// char **arr_with_str = ft_split("hello!", ' ');
-	// int i = 0;
-	// while (arr_with_str[i])
-	// {
-	//     printf("%s\n", arr_with_str[i]);
-	//     i++;
-	// }
-
-	return(0);
-}
+// 	return(0);
+// }
