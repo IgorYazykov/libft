@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:22:39 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 17:48:56 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:36:16 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,21 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 // int main(void)
 // {
+// 	int i = 0;
+
 //     char dest1[] = "Geeksfor";
-//     char src1[] = "Frog";
-//     printf("Befor %s\n", dest1);
-//     ft_memmove(dest1, src1, 4);
+//     printf("Before %s\n", dest1);
+//     ft_memmove(dest1, dest1 + 2, 4);
 //     printf("After %s\n", dest1);
 
 //     char dest2[] = "Geeksfor";
-//     char src2[] = "Frog";
-//     printf("Befor - original %s\n", dest2);
-//     memmove(dest2, src2, 4);
+//     printf("Before - original %s\n", dest2);
+//     memmove(dest2, dest2 - 2, 6);
 //     printf("After - original %s\n", dest2);
+// 	while (i < 6)
+// 	{
+// 		write(1, &dest2[i], 1);
+// 		i++;
+// 	}
 //     return (0);
 // }

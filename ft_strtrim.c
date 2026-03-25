@@ -6,25 +6,11 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 13:37:41 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 18:16:43 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:48:04 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	comparasion(char const s1, char const *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == s1)
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -34,11 +20,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	end = ft_strlen(s1);
 	start = 0;
-	while (s1[start] && comparasion(s1[start], set))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	if (start < end)
 	{
-		while (s1[end - 1] && comparasion(s1[end - 1], set))
+		while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 			end--;
 	}
 	new_str = malloc(end - start + 1);

@@ -9,7 +9,6 @@ OFILES = ${CFILES:.c=.o}
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -Iincludes
 
 all: ${NAME}
 
@@ -28,10 +27,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# gdb:
-# 	cc -g ft* main.c; gdb a.out
-
-# nolib:
-# 	cc -g ft*.c main.c
-bonus: all

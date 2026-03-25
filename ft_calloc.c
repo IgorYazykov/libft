@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 11:23:41 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 17:09:26 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:12:47 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	new_data = (unsigned char *)malloc(size_for_data);
 	if (new_data == NULL)
 		return (0);
-	if (size_for_data >= 0)
-		ft_bzero(new_data, size_for_data);
+	ft_bzero(new_data, size_for_data);
 	return (new_data);
 }
 

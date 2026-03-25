@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:40:24 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/03/20 19:37:05 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:13:31 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (
-		ft_isalpha(c) || ft_isdigit(c)
-	)
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }
